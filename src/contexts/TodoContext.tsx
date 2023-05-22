@@ -1,11 +1,10 @@
-import React, { createContext } from "react";
-import { TodoContextType } from "./TodoContextType";
+import { createContext } from "react";
 import { Todo } from "../models/Todo";
+import { TodoContextType } from "./TodoContextType";
 
 export const TodoContext = createContext<TodoContextType>({
     todos: [
-        { id: 1, title: 'Ir ao supermercado', done: true },
-        { id: 2, title: 'Ir a academia', done: false }
+
     ],
     addTodo: () => { },
     removeTodo: () => { },
@@ -14,9 +13,20 @@ export const TodoContext = createContext<TodoContextType>({
 
 const TodoProvider = (props: any) => {
 
-    const addTodo = (title: string) => { }
-    const removeTodo = (todo: Todo) => { }
-    const toggle = {}
+    const todos: Todo[] = [{ id: 1, title: 'Ir ao supermercado', done: true },
+    { id: 2, title: 'Ir a academia', done: false }];
+
+    const addTodo = (title: string) => {
+        console.log("Adicionou" + title);
+    }
+
+    const removeTodo = (todo: Todo) => {
+        console.log("Removeu" + Todo);
+    }
+
+    const toggle = (todo: Todo) => {
+        console.log("Alterou" + todo.title);
+    }
 
     return (
         <TodoContext.Provider value={ }>
