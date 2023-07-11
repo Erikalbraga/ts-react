@@ -1,11 +1,10 @@
+import React from "react";
 import { createContext } from "react";
 import { Todo } from "../models/Todo";
 import { TodoContextType } from "./TodoContextType";
 
 export const TodoContext = createContext<TodoContextType>({
-    todos: [
-
-    ],
+    todos: [],
     addTodo: () => { },
     removeTodo: () => { },
     toggle: () => { },
@@ -13,7 +12,8 @@ export const TodoContext = createContext<TodoContextType>({
 
 const TodoProvider = (props: any) => {
 
-    const todos: Todo[] = [{ id: 1, title: 'Ir ao supermercado', done: true },
+    const todos: Todo[] = [
+    { id: 1, title: 'Ir ao supermercado', done: true },
     { id: 2, title: 'Ir a academia', done: false }];
 
     const addTodo = (title: string) => {
@@ -29,7 +29,7 @@ const TodoProvider = (props: any) => {
     }
 
     return (
-        <TodoContext.Provider value={ }>
+        <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggle}}>
             {props.children}
         </TodoContext.Provider>
     );
