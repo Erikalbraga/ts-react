@@ -17,15 +17,15 @@ const TodoProvider = (props: any) => {
     { id: 2, title: 'Ir a academia', done: false }];
 
     const addTodo = (title: string) => {
-        console.log("Adicionou" + title);
+        console.log("Adicionou " + title);
     }
 
     const removeTodo = (todo: Todo) => {
-        console.log("Removeu" + Todo);
+        console.log("Removeu " + todo.title);
     }
 
     const toggle = (todo: Todo) => {
-        console.log("Alterou" + todo.title);
+        console.log("Alterou " + todo.title);
     }
 
     return (
